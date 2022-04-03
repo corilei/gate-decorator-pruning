@@ -10,6 +10,10 @@ from torchvision import transforms
 
 from config import cfg
 
+
+import ssl
+ssl._create_default_https_context = ssl._create_unverified_context
+
 def get_cifar100():
     print('==> Preparing Cifar100 data..')
     transform_train = transforms.Compose([

@@ -11,6 +11,9 @@ import os
 
 from config import cfg
 
+import ssl
+ssl._create_default_https_context = ssl._create_unverified_context
+
 def _get_loaders(root):
     train_dir = os.path.join(root, 'train')
     val_dir = os.path.join(root, 'val')
